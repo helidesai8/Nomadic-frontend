@@ -12,7 +12,7 @@ export const getBlogs = async ({
     q += pageSize ? `${q ? "&" : "?"}limit=${pageSize}` : "";
     q += category ? `${q ? "&" : "?"}category=${category}` : "";
     console.log(`${(import.meta as any).env.VITE_BASE_API_URL}`);
-    const url = `${import.meta.env.VITE_BASE_API_URL}/api/v1/blog${q}`;
+    const url = `${import.meta.env.VITE_BASE_API_URL}api/v1/blog${q}`;
     console.log("Fetching from URL:", url);
     try {
         const response = await fetch(url);
@@ -27,7 +27,7 @@ export const getBlogs = async ({
 };
 
 export const getBlogCategories = async () => {
-    const url = `${import.meta.env.VITE_BASE_API_URL}/api/v1/blog-categories`;
+    const url = `${import.meta.env.VITE_BASE_API_URL}api/v1/blog-categories`;
     console.log("Fetching from URL:", url);
     try {
         const response = await fetch(url);
@@ -42,7 +42,7 @@ export const getBlogCategories = async () => {
 };
 
 export const getBlogById = async (id: string) => {
-    const url = `${import.meta.env.VITE_BASE_API_URL}/api/v1/blog/${id}`;
+    const url = `${import.meta.env.VITE_BASE_API_URL}api/v1/blog/${id}`;
     console.log("Fetching blog by ID from URL:", url);
     try {
         const response = await fetch(url);
@@ -64,7 +64,7 @@ export const updateBlog = async (id: string, data: {
     thumbnail: string;
     userId: number;
 }) => {
-    const url = `${import.meta.env.VITE_BASE_API_URL}/api/v1/blog/${id}`;
+    const url = `${import.meta.env.VITE_BASE_API_URL}api/v1/blog/${id}`;
     console.log("Updating blog by ID from URL:", url);
     try {
         const response = await fetch(url, {
@@ -85,7 +85,7 @@ export const updateBlog = async (id: string, data: {
 };
 
 export const deleteBlog = async (id: string) => {
-    const url = `${import.meta.env.VITE_BASE_API_URL}/api/v1/blog/${id}`;
+    const url = `${import.meta.env.VITE_BASE_API_URL}api/v1/blog/${id}`;
     console.log("Deleting blog by ID from URL:", url);
     try {
         const response = await fetch(url, {
@@ -109,7 +109,7 @@ export const addBlog = async (data: {
     thumbnail: string;
     userId: number;
 }) => {
-    const url = `${import.meta.env.VITE_BASE_API_URL}/api/v1/blog`;
+    const url = `${import.meta.env.VITE_BASE_API_URL}api/v1/blog`;
     console.log("Adding new blog to URL:", url);
     try {
         const response = await fetch(url, {

@@ -37,7 +37,7 @@ const Manage_Listing: React.FC = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const response = await axios.get(URL+`/api/v1/tours`, {
+        const response = await axios.get(URL+`api/v1/tours`, {
           params: {
             page,
             pageSize,
@@ -64,7 +64,7 @@ const Manage_Listing: React.FC = () => {
 
   const handleDeleteTour = async (id: number) => {
     try {
-      await axios.delete(URL + `/api/v1/tours/${id}`);
+      await axios.delete(URL + `api/v1/tours/${id}`);
       toast.success('Tour deleted successfully');
       setOpenDialog(false);
       setTourToDelete(null);

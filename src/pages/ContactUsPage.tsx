@@ -72,7 +72,7 @@ const ContactUsPage: React.FC = () => {
         console.log(formData);
         if (validate()) {
             try {
-                const data = axios.post(`${URL}/api/v1/contact`, formData);
+                const data = axios.post(`${URL}api/v1/contact`, formData);
                 toast.success("Email sent successfully");
             } catch (error) {
                 toast.error("Failed to send email");

@@ -16,7 +16,7 @@ export const BucketList = () => {
     setUserId(data.userId);
     const fetchWishlist = async () => {
       try {
-        const response = await axios.get(URL + `/api/v1/wishlist/${userId}`);
+        const response = await axios.get(URL + `api/v1/wishlist/${userId}`);
         setWishlist(response.data);
       } catch (error) {
         console.error('Error fetching wishlist:', error);
@@ -54,7 +54,7 @@ export const BucketList = () => {
   }
   const handleRemoveTour = async (wishlistId) => {
     try {
-     const data= await axios.delete(URL + `/api/v1/wishlist/${wishlistId}`);
+     const data= await axios.delete(URL + `api/v1/wishlist/${wishlistId}`);
       console.log(data);
       setWishlist(prevWishlist => prevWishlist.filter(item => item.id !== wishlistId));
     } catch (error) {
